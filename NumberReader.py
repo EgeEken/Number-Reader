@@ -10,14 +10,17 @@ test_pixels = []
 test_labels = []
 temp_pixels = []
 
-with open("traindata.txt") as traindata:
-    for trainline in traindata:
-        if "1" in trainline or "0" in trainline:
-            for num in trainline[:NUM_PIXELS]:
-                temp_pixels.append(int(num))
-            train_pixels.append(temp_pixels)
-            temp_pixels = []
-            train_labels.append(int(trainline[NUM_PIXELS]))
+try:
+    with open("traindata.txt") as traindata:
+        for trainline in traindata:
+            if "1" in trainline or "0" in trainline:
+                for num in trainline[:NUM_PIXELS]:
+                    temp_pixels.append(int(num))
+                train_pixels.append(temp_pixels)
+                temp_pixels = []
+                train_labels.append(int(trainline[NUM_PIXELS]))
+except FileNotFoundError:
+    print("No training data found, assuming weights and bias will be given")
 
 with open("testdata.txt") as testdata:
     for testline in testdata:
@@ -101,10 +104,9 @@ def predict(pixels, weights, bias):
     return [int(round(pred)) for pred in predictions]
 
 
-b = input("Is there a weights file to load? (if so, whats the filename? leave empty if no): ")
+b = input("Is there a weights file to load? (if not, press enter, if there is, write the filename, default if input is not empty is weights.txt): ")
 if b in {"default", "yes", "y", "weights"}:
     b = "weights.txt"
-    weights = np.loadtxt(b, dtype = float)
 bpass = True
 if b:
     bpass = False
@@ -126,7 +128,7 @@ if b:
         bpass = True
 
 cont = 0
-if not bpass:
+if not bpass and train_labels != []:
     cont = input("Continue training? (default: no): ")
     if cont not in {"no", "n", "stop", "default", "", "0"}:
         bpass = True
