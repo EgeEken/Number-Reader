@@ -29,3 +29,8 @@ Once you have your training and testing data, you can use NumberReader.py to tra
 If you don't plan on creating your own training and testing data, i included the weights and bias for a 110k iteration training session using a 400+ image training data set, and also a test dataset of 200+ images to predict. You can use those in NumberReader.py, and INPUTNumberReader.py if you want to input your own test images on the spot instead of using the given set.
 
 Admittedly, the accuracy of this model is far from ideal, achieving only a 16.99% accuracy with the testing set i provided. While that's still better than the 10% you would expect from a completely untrained, random model, I will update this repository with better weights and biases later on, so stay tuned.
+
+### Weights updates:
+- V1: 431 image dataset, 110,000+ iterations, 0.01 learning rate, 16.99% accuracy
+- V2: 650 image dataset, 11,000+ iterations, 0.011 learning rate, 17.96% accuracy
+- V3: 1000 image dataset, to be tuned further and tested
