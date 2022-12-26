@@ -140,7 +140,7 @@ if bpass:
     try:
         a = int(a)
     except:
-        print("Invalid input, using default (1000 iterations")
+        print("Invalid input, using default (1000 iterations)")
         a = 1000
 
     c = input("What is the learning rate (default: 0.01): ")
@@ -149,7 +149,7 @@ if bpass:
         c = float(c)
     except:
         print("Invalid input, using default (0.01 learning rate)")
-        c = 1000
+        c = 0.01
 
     start = time.time()
     if cont == "cont":
@@ -164,11 +164,11 @@ if bpass:
     with open("results.txt", "a") as weightsfile:
         weightsfile.write("----------------------------------------------------------------------------------------------------")
         weightsfile.write(os.linesep)
-        weightsfile.write("Weights for " + str(len(train_labels)) + " data sources and " + str(itercount) + " iterations:")
+        weightsfile.write("Weights for " + str(len(train_labels)) + " data sources,", c, "learning rate and " + str(itercount) + " iterations:")
         weightsfile.write(os.linesep)
         weightsfile.write(str(weights))
         weightsfile.write(os.linesep)
-        weightsfile.write("Bias for " + str(len(train_labels)) + " data sources and " + str(itercount) + " iterations:")
+        weightsfile.write("Bias for " + str(len(train_labels)) + " data sources,", c, "learning rate and " + str(itercount) + " iterations:")
         weightsfile.write(os.linesep)
         weightsfile.write(str(bias))
         weightsfile.write(os.linesep)
