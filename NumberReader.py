@@ -105,7 +105,7 @@ def predict(pixels, weights, bias):
 
 
 b = input("Is there a weights file to load? (if not, press enter, if there is, write the filename, default if input is not empty is weights.txt): ")
-if b in {"default", "yes", "y", "weights"}:
+if b != "" and b != " " and b != "no":
     b = "weights.txt"
 bpass = True
 if b:
@@ -130,13 +130,14 @@ if b:
 cont = 0
 if not bpass and train_labels != []:
     cont = input("Continue training? (default: no): ")
-    if cont not in {"no", "n", "stop", "default", "", "0"}:
+    if cont not in {"no", "n", "stop", "default", "", "0", " "}:
         bpass = True
         cont = "cont"
 
 if bpass:
     a = input("How many training iterations? (default 1000): ")
-
+    if a == "":
+        a = 1000
     try:
         a = int(a)
     except:
@@ -144,7 +145,8 @@ if bpass:
         a = 1000
 
     c = input("What is the learning rate (default: 0.01): ")
-
+    if c == "":
+        c = 0.01
     try:
         c = float(c)
     except:
@@ -164,11 +166,11 @@ if bpass:
     with open("results.txt", "a") as weightsfile:
         weightsfile.write("----------------------------------------------------------------------------------------------------")
         weightsfile.write(os.linesep)
-        weightsfile.write("Weights for " + str(len(train_labels)) + " data sources,", c, "learning rate and " + str(itercount) + " iterations:")
+        weightsfile.write("Weights for " + str(len(train_labels)) + " data sources, " + str(c) + " learning rate and " + str(itercount) + " iterations:")
         weightsfile.write(os.linesep)
         weightsfile.write(str(weights))
         weightsfile.write(os.linesep)
-        weightsfile.write("Bias for " + str(len(train_labels)) + " data sources,", c, "learning rate and " + str(itercount) + " iterations:")
+        weightsfile.write("Bias for " + str(len(train_labels)) + " data sources, " + str(c) + " learning rate and " + str(itercount) + " iterations:")
         weightsfile.write(os.linesep)
         weightsfile.write(str(bias))
         weightsfile.write(os.linesep)
