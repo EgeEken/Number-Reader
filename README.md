@@ -31,6 +31,6 @@ If you don't plan on creating your own training and testing data, i included the
 Admittedly, the accuracy of this model is far from ideal, achieving only a 16.99% accuracy with the testing set i provided. While that's still better than the 10% you would expect from a completely untrained, random model, I will update this repository with better weights and biases later on, so stay tuned.
 
 ### Weights updates:
-- V1: 431 image dataset, 110,000+ iterations, 0.01 learning rate, 16.99% accuracy
-- V2: 650 image dataset, 11,000+ iterations, 0.011 learning rate, 17.96% accuracy
-- V3: 1000 image dataset, to be tuned further and tested
+- V0.1: 431 image dataset, 110,000+ iterations, 0.01 learning rate, 16.99% accuracy
+- V0.2: 650 image dataset, 11,000+ iterations, 0.011 learning rate, 17.96% accuracy
+- V1: 1000 image dataset, to be tuned further and tested before release
