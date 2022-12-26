@@ -1,8 +1,6 @@
 # Number Reader
 An AI program that can be trained to read numbers on a 16x16 black and white image.
 
-
-
 ### Requirements:
 - Python (should probably work with anything over Python 3.6, but definitely not an older version)
 - PyGame library (if not installed, go on cmd/terminal and write "pip install pygame")
@@ -18,7 +16,15 @@ To create your own training/testing dataset, you can use the BinaryImage.py prog
 - The first half of the drawings will be training data, the second half will be used for testing
 - You have to draw the number you see on the top left
 
-Once you have your training and testing data, you can use NumberReader.py to train your AI and calculate the weights and the bias, which will be saved in the files "weights.txt" and "bias.txt", i would recommend changing the file names before continuing to create new models as they will be overwritten in new training sessions. It will also ask you for the iteration count and learning rate, which default to 1000 and 0.01 respectively, i wouldn't recommend changing the learning rate unless you know what you're doing, but 1000 is supposed to be a very small number of iterations, so feel free to increase that.
+Once you have your training and testing data, you can use NumberReader.py to train your AI and calculate the weights and the bias, which will be saved in the files "weights.txt" and "bias.txt", i would recommend changing the file names before continuing to create new models as they will be overwritten in new training sessions. It will also ask you for the iteration count and learning rate, which default to 1000 and 0.01 respectively, i wouldn't recommend changing the learning rate unless you know what you're doing, and if you do know what you're doing, you can find my results from testing various learning rates with the same amount of iterations and the same data set below, but 1000 is supposed to be a relatively small number of iterations, so feel free to increase that.
+
+<details><summary>Learning rate test results: (click here to open)</summary>
+<p>
+
+<img width="472" alt="image" src="https://user-images.githubusercontent.com/96302110/209546184-a95e89fd-1bca-4bcb-836b-9cf812861a41.png">
+
+</p>
+</details>
 
 If you don't plan on creating your own training and testing data, i included the weights and bias for a 110k iteration training session using a 400+ image training data set, and also a test dataset of 200+ images to predict. You can use those in NumberReader.py, and INPUTNumberReader.py if you want to input your own test images on the spot instead of using the given set.
 
