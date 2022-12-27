@@ -1,5 +1,5 @@
 # Number Reader
-An AI program that can be trained to read numbers on a 16x16 black and white image.
+An AI program that can be trained to read numbers on a 16x16 black and white image. This program does not use any ai-specific libraries that are made to simplify the process of creating an ai model, since I wanted to learn how the fundamentals work first, so it only uses numpy for simple mathematical functions like dot products etc. 
 
 ### Requirements:
 - Python (should probably work with anything over Python 3.6, but definitely not an older version)
@@ -33,4 +33,6 @@ Admittedly, the accuracy of this model is far from ideal, achieving only a 16.99
 ### Weights updates:
 - V0.1: 431 image dataset, 110,000+ iterations, 0.01 learning rate, 16.99% accuracy
 - V0.2: 650 image dataset, 11,000+ iterations, 0.011 learning rate, 17.96% accuracy
-- V1: 1000 image dataset, to be tuned further and tested before release
+- V0.3: 1000 image dataset, 10,000+ iterations, 0.01 learning rate, 14.56% accuracy
+ At this point i did some more research to find why the accuracy was not improving, and i found out that the model i had created was actually a Linear Classifier, as opposed to a Neural Network which would be much more useful in this task where we analyze images, so i am now working on a neural network version of it, I will update the code and add results once it's up and running.
+- V1: 1000 image dataset neural network
