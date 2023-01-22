@@ -23,8 +23,15 @@ Once you have your training and testing data, you can use TRAINNumberReader.py t
 If you don't plan on creating your own training and testing data, i included the weights and bias for a 110k iteration training session using a 1000 image training data set, and also a testing set of 200+ labeled images to predict. You can use those in TRAINNumberReader.py, and INPUTNumberReader.py if you want to input your own test images on the spot instead of using the given set.
 
 ### Weights updates:
-- V0.1: 431 image dataset, 110,000+ iterations, 0.01 learning rate, 16.99% accuracy
-- V0.2: 650 image dataset, 11,000+ iterations, 0.011 learning rate, 17.96% accuracy
-- V0.3: 1000 image dataset, 10,000+ iterations, 0.01 learning rate, 14.56% accuracy
+- V0.1: 431 image dataset, 16.99% accuracy
+- V0.2: 650 image dataset, 17.96% accuracy
+- V0.3: 1000 image dataset, 14.56% accuracy
  At this point i did some more research to find why the accuracy was not improving, and i found out that the model i had created was actually not doing great because it only had a single layer of neurons, which makes it a Linear Classifier, as opposed to a Neural Network which would be much more useful in this task where we analyze images, so i made a 2 layer neural network version of it.
-- V1: 1000 image dataset neural network, 10,000+ iterations, 0.01 learning rate, 83.01% accuracy
+- V1: 1000 image dataset Neural Network, 83.01% accuracy
+- V2: 1000 image dataset Deep Neural Network (3 layers), 81.55% accuracy
+The accuracy is stuck around here because of a bottleneck caused by the amount of labeled images in the dataset, i tested the math behind the model out using an online dataset of 40,000+ 28x28 labeled images, and within just 1000 iterations, it could reach an accuracy of 85.5%
+
+<img width="714" alt="image" src="https://user-images.githubusercontent.com/96302110/213942677-3f433930-29e2-4deb-8603-e7136b4c2d3b.png">
+<img width="461" alt="image" src="https://user-images.githubusercontent.com/96302110/213942687-03fd8737-0023-45f5-b822-e9e34c51287d.png">
+
+It took over an hour and 20 minutes to train 1000 iterations due to the massive size of the dataset and usage of 3 layers, but it allowed for higher precision than i could achieve with my own dataset of 1000 images, so at least it's a proof of concept that the deep neural network system works as intended.
