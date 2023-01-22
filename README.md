@@ -34,4 +34,4 @@ The accuracy is stuck around here because of a bottleneck caused by the amount o
 <img width="714" alt="image" src="https://user-images.githubusercontent.com/96302110/213942677-3f433930-29e2-4deb-8603-e7136b4c2d3b.png">
 <img width="461" alt="image" src="https://user-images.githubusercontent.com/96302110/213942687-03fd8737-0023-45f5-b822-e9e34c51287d.png">
 
-It took over an hour and 20 minutes to train 1000 iterations due to the massive size of the dataset and usage of 3 layers, but it allowed for higher precision than i could achieve with my own dataset of 1000 images, so at least it's a proof of concept that the deep neural network system works as intended.
+It took over an hour and 20 minutes to train 1000 iterations due to the massive size of the dataset and usage of 3 layers, but it allowed for higher precision than i could achieve with my own dataset of 1000 images, despite only using 1000 iterations (usually it takes a bit more at least to fine tune it) so at least it's a proof of concept that the deep neural network system works as intended.
