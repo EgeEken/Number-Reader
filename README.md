@@ -29,9 +29,9 @@ If you don't plan on creating your own training and testing data, i included the
  At this point i did some more research to find why the accuracy was not improving, and i found out that the model i had created was actually not doing great because it only had a single layer of neurons, which makes it a Linear Classifier, as opposed to a Neural Network which would be much more useful in this task where we analyze images, so i made a 2 layer neural network version of it.
 - V1: 1000 image dataset Neural Network, 83.01% accuracy
 - V2: 1000 image dataset Deep Neural Network (3 layers), 81.55% accuracy
-The accuracy is stuck around here because of a bottleneck caused by the amount of labeled images in the dataset, i tested the math behind the model out using an online dataset of 40,000+ 28x28 labeled images, and within just 1000 iterations, it could reach an accuracy of 85.5%
 
-<img width="714" alt="image" src="https://user-images.githubusercontent.com/96302110/213942677-3f433930-29e2-4deb-8603-e7136b4c2d3b.png">
-<img width="461" alt="image" src="https://user-images.githubusercontent.com/96302110/213942687-03fd8737-0023-45f5-b822-e9e34c51287d.png">
+The accuracy is stuck around here because of a bottleneck caused by the amount of labeled images in the dataset, i tested the math behind the model out using an online dataset of 42,000 28x28 labeled images, and within around 5000 iterations, it could reach an accuracy of 98.6%
 
-It took over an hour and 20 minutes to train 1000 iterations due to the massive size of the dataset and usage of 3 layers, but it allowed for higher precision than i could achieve with my own dataset of 1000 images, despite only using 1000 iterations (usually it takes a bit more at least to fine tune it) so at least it's a proof of concept that the deep neural network system works as intended.
+<img width="424" alt="image" src="https://user-images.githubusercontent.com/96302110/213956855-f6fc29b0-aab6-4ec3-9efd-cecc67ea7cd0.png">
+
+It took over an hour and 20 minutes to train 1000 iterations due to the massive size of the dataset and usage of 3 layers, but it allowed for higher precision than i could achieve with my own dataset of 1000 images, so at least it's a proof of concept that the deep neural network system works as intended.
